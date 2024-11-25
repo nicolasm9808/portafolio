@@ -331,6 +331,14 @@ span+span {
 .contact_email:hover {
     color: #a357e2;
     text-decoration: underline;
+    cursor: pointer;
+}
+
+#copy-message {
+    display: none;
+    color: var(--white);
+    font-size: 2rem;
+    margin-top: 5px;
 }
 
 .text-type {

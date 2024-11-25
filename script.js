@@ -19,7 +19,7 @@ window.addEventListener('scroll', () => {
 });
 
 /*===== Boton Menu =====*/
-btn.addEventListener('click', function() {
+btn.addEventListener('click', function () {
     if (this.classList.contains('active')) {
         this.classList.remove('active');
         this.classList.add('not-active');
@@ -39,7 +39,7 @@ const changeLanguage = async language => {
     const requestJson = await fetch(`./languages/${language}.json`);
     const texts = await requestJson.json();
 
-    for(const textToChange of textsToChange) {
+    for (const textToChange of textsToChange) {
         const section = textToChange.dataset.section;
         const value = textToChange.dataset.value;
 
@@ -69,7 +69,7 @@ window.addEventListener('scroll', () => {
 });
 
 /*===== Boton y función ir arriba =====*/
-window.onscroll = function() {
+window.onscroll = function () {
     if (document.documentElement.scrollTop > 100) {
         document.querySelector('.go-top-container').classList.add('show');
     }
@@ -83,4 +83,22 @@ document.querySelector('.go-top-container').addEventListener('click', () => {
         top: 0,
         behavior: 'smooth'
     });
+});
+
+const emailElement = document.getElementById("email");
+const email = emailElement.textContent;
+const message = document.getElementById("copy-message");
+
+emailElement.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(email); // Copia el correo al portapapeles
+        message.style.display = "block"; // Muestra el mensaje de confirmación
+
+        // Oculta el mensaje después de 2 segundos
+        setTimeout(() => {
+            message.style.display = "none";
+        }, 2000);
+    } catch (err) {
+        console.error("Error al copiar: ", err);
+    }
 });
