@@ -11,7 +11,7 @@ nav.nav_menu {
 }
 
 nav.nav_menu a {
-    font-size: 1.6rem;
+    font-size: 2rem;
     padding: .5rem;
     color: var(--white);
     text-decoration: none;
@@ -64,7 +64,7 @@ div.btn {
 
 .container_image-home {
     width: 55%;
-    padding-right: 4rem;
+    padding-right: 2rem;
 }
 
 .image_home {
@@ -73,7 +73,7 @@ div.btn {
 
 .home_info {
     width: 40%;
-    padding-left: 6rem;
+    padding-left: 4rem;
 }
 
 .container_text-info {
@@ -86,20 +86,18 @@ div.btn {
 }
 
 .home_text-1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     margin-left: .4rem;
-    font-weight: bold;
 }
 
 .home_text-2 {
     font-size: 6rem;
-    font-weight: bold;
     color: var(--white);
 }
 
 .home_text-3 {
     margin: 0 0 2rem 0;
-    font-size: 1.8rem;
+    font-size: 3rem;
     width: 35rem;
     letter-spacing: .2rem;
 }
@@ -111,20 +109,27 @@ div.btn {
 
 .container_parrafo-info p {
     color: var(--light-grey);
-    font-size: 1.4rem;
+    font-size: 2.5rem;
     letter-spacing: 1px;
-    line-height: 2rem;
+    line-height: 2.5rem;
+}
+
+.contact_email{
+    display: flex;
+    padding-top: 2rem;
 }
 
 .container_button {
     display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
 }
 
 .cv_button {
     background: none;
     color: var(--beaver);
     border: 1px solid var(--beaver);
-    margin-right: 1rem;
     transition: .2s;
 }
 
@@ -134,47 +139,20 @@ div.btn {
     transition: 1s transform;
 }
 
-.contact_button {
-    display: inline-block;
-    background-color: var(--beaver);
-    border-radius: 3rem;
-    padding: .7rem 4rem .6rem 4rem;
-    color: var(--jet);
-    font-weight: bold;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    letter-spacing: .1rem;
-    margin: 2rem 0 2rem 1rem;
-    border: none;
-    cursor: pointer;
-    transition: .4s;
-}
-
-.contact_button:hover {
-    background-color: #776254;
-    box-shadow: 0px 2px 10px #141414;
-    transition: 1s transform;
-}
-
 .links {
     width: 5%;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 3rem 2rem 3rem;
+    display: flex;
+    padding: 0rem 3rem 2rem 4rem;
 }
 
 .links img {
-    margin: .7rem 0 .7rem 0;
+    margin-left: 2rem;
 }
 
 /* Sobre Mí */
 
-.sobreMi {
-    padding-bottom: 4rem;
-}
-
 .sobreMi h1 {
-    margin-top: 2rem;
+    margin: 2rem;
     font-size: 3rem;
 }
 
