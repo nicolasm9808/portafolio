@@ -412,7 +412,7 @@ span+span {
     color: var(--white);
     font-size: 2.4rem;
     letter-spacing: .1rem;
-    padding-top: 6rem;
+    padding: 0;
 }
 
 .container_texto-sobreMi {
@@ -426,7 +426,8 @@ span+span {
     text-align: center;
     font-size: 2.2rem;
     letter-spacing: .1rem;
-    margin-bottom: 2rem;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .texto_sobreMi {
@@ -448,7 +449,6 @@ span+span {
 
 .image_sobreMi {
     width: 65%;
-    margin-bottom: 5rem;
     border-bottom: 2px solid var(--jet);
 }
 
@@ -680,6 +680,11 @@ span+span {
     border-radius: 24px;
     padding: 3rem;
     position: relative;
+    color: var(--white);
+    font-size: 1.6rem;
+    outline: none;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
 }
 
 .container_text--contacto {
@@ -694,7 +699,7 @@ span+span {
     line-height: 2.3rem;
 }
 
-.form-contact input {
+#contactForm input {
     background: transparent;
     border: 1px solid var(--light-grey);
     width: 100%;
@@ -707,16 +712,16 @@ span+span {
     letter-spacing: 1px;
 }
 
-.form-contact input::placeholder {
+#contactForm input::placeholder {
     color: var(--light-grey);
 }
 
-.form-contact .input-invalid {
+#contactForm .input-invalid {
     border: 1px solid #4d145e;
     color: #4d145e;
 }
 
-.form-contact textarea {
+#contactForm textarea {
     background: transparent;
     border: 1px solid var(--light-grey);
     width: 100%;
@@ -730,30 +735,29 @@ span+span {
     resize: none;
 }
 
-.form-contact textarea::placeholder {
+#contactForm textarea::placeholder {
     color: var(--light-grey);
 }
 
-.form-contact textarea::-webkit-scrollbar {
+#contactForm textarea::-webkit-scrollbar {
     width: 8px;
 }
 
-.form-contact textarea::-webkit-scrollbar-track {
+#contactForm textarea::-webkit-scrollbar-track {
+    background-color: #4d145e;
+}
+
+#contactForm textarea::-webkit-scrollbar-thumb {
     background-color: #4d145e;
 }
 
 
-.form-contact textarea::-webkit-scrollbar-thumb {
-    background-color: #4d145e;
-}
-
-
-.btn_form--contacto {
+#contactForm button {
     display: flex;
     justify-content: center;
 }
 
-.btn_form--contacto button {
+#contactForm button {
     background: #4d145e;
     border: none;
     width: 20rem;
@@ -766,7 +770,7 @@ span+span {
     transition: 1s all;
 }
 
-.btn_form--contacto button:hover {
+#contactForm button:hover {
     background: #4d145e;
     color: var(--black);
     font-weight: bold;
@@ -775,7 +779,7 @@ span+span {
     transition: all .4s ease;
 }
 
-.btn_form--contacto button:active {
+#contactForm button:active {
     background: #4d145e;
 }
 
@@ -896,5 +900,201 @@ footer {
     100% {
         width: 6rem;
         height: 6rem;
+    }
+}
+
+/* Header */
+@media (max-width: 768px) {
+    nav.nav_menu.not-active{
+        width: 0;
+    }
+    nav.nav_menu.active {
+        width: 100%;
+        margin-left: 0;
+        top: 0rem;
+        box-shadow: none;
+    }
+    
+    .header {
+        transition: none;
+        padding: 2rem;
+    }
+    .header.abajo {
+        backdrop-filter: none;
+        background: rgba(41, 41, 41, .3);
+    }
+    .container--contacto {
+        font-size: 1.6rem; 
+    }
+}
+
+/* Home */
+@media (max-width: 768px) {
+    .container_image-home{
+        padding: 12% 0 10% 0;
+    }
+    .image_home {
+        max-width: 100%; /* Hace que la imagen ocupe el 100% del ancho disponible */
+    }
+
+    .container_text-info {
+        flex-direction: column;
+        text-align: center; /* Centra el texto */
+    }
+
+    .home_text-1 {
+        margin-right: 0;
+        font-size: 2.2rem; /* Ajusta el tamaño de texto */
+    }
+
+    .home_text-2 {
+        font-size: 3.2rem; /* Ajusta el tamaño de texto */
+    }
+    .home_text-3 {
+        font-size: 2rem;
+    }
+    .container_parrafo-info {
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .container_parrafo-info p {
+        color: var(--light-grey);
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        line-height: 1.8rem;
+    }
+    
+    .contact_email{
+            padding-top: 2rem;
+    }
+}
+/* Contacto */
+@media (max-width: 768px) {
+    .container--contacto {
+        width: 90%; /* Reduce el ancho del contenedor */
+        margin: 0 auto;
+        text-align: center; /* Centra el texto */
+    }
+
+    /* Aseguramos que el correo sea visible */
+    .contacto_email {
+        font-size: 1.8rem;
+        color: #fff; /* Establece el color blanco para el texto */
+        background-color: #333; /* Fondo oscuro para mayor contraste */
+        padding: 0.5rem 1rem; /* Agrega un poco de espacio alrededor del correo */
+        border-radius: 5px; /* Redondea los bordes */
+        display: inline-block; /* Asegura que el correo se muestre como bloque en línea */
+        margin-top: 1rem; /* Añade un pequeño margen superior */
+        text-decoration: none; /* Elimina subrayado si es un enlace */
+    }
+
+    .contacto_email:hover {
+        background-color: #555; /* Cambia el fondo al pasar el ratón por encima */
+    }
+}
+
+/* Sobre mi */
+@media (max-width: 768px) {
+    .sobreMi {
+        padding: 1rem 1.5rem; /* Reduce el padding para que no haya tanto espacio en los laterales */
+    }
+
+    .container_content-sobreMi {
+        padding: 1rem;
+    }
+
+    .container_texto-sobreMi {
+        padding: 2rem; /* Reduce el padding en la sección de texto */
+    }
+
+    .title_sobreMi {
+        font-size: 2.4rem; /* Reduce el tamaño de los títulos */
+    }
+
+    .texto_sobreMi {
+        font-size: 1.6rem; /* Ajusta el tamaño de texto */
+        line-height: 2.2rem; /* Ajusta el interlineado */
+    }
+
+    .container_image-sobreMi {
+        width: 100%; /* Hace que la imagen se ajuste al 100% del contenedor */
+        margin-top: 1rem;
+    }
+}
+
+/* Habilidades */
+@media (max-width: 768px) {
+    .cards_container--habilidades {
+        column-gap: 2rem; /* Ajusta el espacio entre las tarjetas */
+        grid-template-columns: 1fr 1fr; /* Alinea las tarjetas en dos columnas */
+    }
+}
+
+/* Formación */
+@media (max-width: 768px) {
+    .cards_container--formacion {
+        flex-direction: column; /* Cambia a columna */
+    }
+
+    .cards--formacion {
+        margin: 1rem 0; /* Ajusta el margen entre las tarjetas */
+    }
+}
+
+/* Proyectos */
+@media (max-width: 768px) {
+    .cards--proyectos {
+        max-width: 100%; /* Ajusta el máximo ancho de las tarjetas */
+    }
+
+    .container_btn--proyectos button {
+        width: 100%; /* Hace que el botón ocupe todo el ancho disponible */
+    }
+}
+
+/* Contacto */
+@media (max-width: 768px) {
+    .container--contacto {
+        width: 90%; /* Reduce el ancho del contenedor */
+        margin: 0 auto;
+        text-align: center; /* Centra el texto */
+    }
+
+    /* Hacer el correo visible */
+    .contacto_email {
+        font-size: 1.8rem;
+        color: #333; /* Asegura que el correo sea legible */
+    }
+}
+
+/* Menú desplegable */
+@media (max-width: 768px) {
+    nav.nav_menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%; /* Ocupa el 100% del ancho en dispositivos móviles */
+        position: absolute;
+        top: 4rem; /* Ajusta el menú en la parte superior */
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro para mejor visibilidad */
+        padding: 1rem 0;
+    }
+
+    nav.nav_menu ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    nav.nav_menu ul li {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    nav.nav_menu ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.6rem; /* Ajusta el tamaño de fuente de los enlaces */
     }
 }

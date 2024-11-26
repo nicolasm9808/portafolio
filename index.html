@@ -110,11 +110,12 @@
 
         <!-- Sobre mí -->
         <section class="sobreMi" id="sobreMi">
-            <h1 data-section="sobre-mi" data-value="title" data-aos="fade-up">Sobre mí</h1>
+            
 
             <div class="container_content-sobreMi" data-aos="fade-right">
                 <div class="container_texto-sobreMi">
-                    <span class="texto_sobreMi" data-section="sobre-mi" data-value="texto_sobreMi">Soy un apasionado del desarrollo tecnológico y la innovación. Me destaco por ser dedicado, responsable y honesto, entregando siempre mi mejor esfuerzo en cada proyecto. Mi capacidad de adaptación me permite asumir retos con confianza, trabajando tanto en equipo como de manera independiente para garantizar resultados de calidad.
+                    <h1 data-section="sobre-mi" data-value="title" data-aos="fade-up">Sobre mí</h1>
+                    <span class="texto_sobreMi" data-section="sobre-mi" data-value="texto_sobreMi">Estoy comprometido con la innovación y el desarrollo tecnológico. Me destaco por ser dedicado, responsable y honesto, entregando siempre mi mejor esfuerzo en cada proyecto. Mi capacidad de adaptación me permite asumir retos con confianza, trabajando tanto en equipo como de manera independiente para garantizar resultados de calidad.
 
                         Cuento con experiencia en el desarrollo de software, la optimización de recursos y la gestión de proyectos bajo el marco de trabajo Scrum. Además, he liderado equipos para implementar soluciones tecnológicas que mejoran la competitividad y productividad de las empresas, siempre con un alto sentido de responsabilidad social.
                         
@@ -123,7 +124,7 @@
                 </div>
     
                 <picture class="container_image-sobreMi">
-                    <img class="image_sobreMi" src="./assets/images/acerda_de_mi.png" alt="Ilustración Nicolás Méndez de pie">
+                    <img class="image_sobreMi" src="./assets/images/acerca_de_mi.png" alt="Ilustración Nicolás Méndez de pie">
                 </picture>
             </div>
         </section>
@@ -255,16 +256,22 @@
                         <p data-section="contacto" data-value="text">Completa el siguiente formulario y me pondré en contacto contigo lo antes posible.</p>
                     </div>
     
-                    <form id="form" class="form-contact" name="contacto-portafolio" netlify>
-                        <input id="nombre" type="text" name="name" placeholder="Nombre | Name" required>
-                        <input id="email" type="email" name="email" placeholder="E-mail" required>
-                        <input id="asunto" type="text" name="affair" placeholder="Asunto | Subject" required>
-                        <textarea id="mensaje" cols="20" rows="4" name="message" placeholder="Mensaje | Message" required></textarea>
-    
-                        <div class="btn_form--contacto">
-                            <button id="btn-enviar" type="submit" data-section="contacto" data-value="btn-enviar">Enviar</button>
+                    <form id="contactForm">
+                        <div>
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
+                        <div>
+                            <label for="email">Correo electrónico:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div>
+                            <label for="message">Mensaje:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit">Enviar</button>
                     </form>
+                    <p id="responseMessage"></p>
                 </div>
             </div>
         </section>
@@ -305,5 +312,8 @@
 
     <!-- Mi script -->
     <script src="./script.js"></script>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </body>
 </html>

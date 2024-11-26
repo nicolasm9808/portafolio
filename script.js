@@ -91,14 +91,41 @@ const message = document.getElementById("copy-message");
 
 emailElement.addEventListener("click", async () => {
     try {
-        await navigator.clipboard.writeText(email); // Copia el correo al portapapeles
-        message.style.display = "block"; // Muestra el mensaje de confirmación
-
-        // Oculta el mensaje después de 2 segundos
+        await navigator.clipboard.writeText(email);
+        message.style.display = "block";
         setTimeout(() => {
             message.style.display = "none";
         }, 2000);
     } catch (err) {
         console.error("Error al copiar: ", err);
     }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    emailjs.init(zyydBsHDlPToQjFxB);
+
+    const form = document.getElementById('contactForm');
+    const responseMessage = document.getElementById('responseMessage');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); 
+        const formData = new FormData(form);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message'),
+        };
+
+        emailjs.send(service_kyh60ct, template_7l0xrgg, data)
+            .then(() => {
+                responseMessage.textContent = '¡Mensaje enviado exitosamente!';
+                responseMessage.style.color = 'green';
+                form.reset();
+            })
+            .catch((error) => {
+                responseMessage.textContent = 'Hubo un error al enviar el mensaje. Intenta nuevamente.';
+                responseMessage.style.color = 'red';
+                console.error('Error:', error);
+            });
+    });
 });

@@ -152,8 +152,8 @@ div.btn {
 /* Sobre Mí */
 
 .sobreMi h1 {
-    margin: 2rem;
     font-size: 3rem;
+    margin-bottom: 2rem;
 }
 
 .container_content-sobreMi {
